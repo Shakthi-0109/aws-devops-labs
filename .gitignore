@@ -1,2 +1,19 @@
 sample_logs/
 *.tar.gz
+# Ignore Python artifacts & logs in Project 01
+01-log-offloader/sample_logs/
+01-log-offloader/*.tar.gz
+*.log
+
+# Ignore Terraform state & providers across all projects
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
