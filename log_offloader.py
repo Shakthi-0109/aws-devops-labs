@@ -5,10 +5,9 @@ import boto3
 from botocore.exceptions import ClientError
 
 # Configuration
-LOG_DIR = "./sample_logs"
-BUCKET_NAME = "devops-logs-offload-shakthi-1147"
-REGION = "us-east-1"
-
+LOG_DIR = os.getenv("APP_LOG_DIR", "./sample_logs")
+BUCKET_NAME = os.getenv("OFFLOAD_BUCKET_NAME", "devops-logs-offload-shakthi-1147")
+REGION = os.getenv("AWS_DEFAULT_REGION", "us-east-1")
 def create_sample_logs():
     """Simulates production application generating log files"""
     os.makedirs(LOG_DIR, exist_ok=True)
